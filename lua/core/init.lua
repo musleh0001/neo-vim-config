@@ -2,6 +2,13 @@ local opt = vim.opt
 local g = vim.g
 local config = require("core.utils").load_config()
 
+---------------------------------- custom -------------------------
+vim.o.foldenable = true        -- Enable folding
+vim.o.foldmethod = "expr"      -- Use an expression for folding
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"  -- Treesitter-based folding
+vim.o.foldlevel = 99           -- Start with all folds open
+vim.o.foldlevelstart = 99      -- Open all folds when opening a file
+
 -------------------------------------- globals -----------------------------------------
 g.nvchad_theme = config.ui.theme
 g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"

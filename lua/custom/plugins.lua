@@ -104,5 +104,24 @@ local plugins = {
       return M
     end
   },
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = { "lua", "python", "javascript", "html", "css" }, -- Add languages you need
+      highlight = { enable = true },
+      indent = { enable = true },
+      fold = { enable = true },  -- Enable Treesitter-based folding
+    },
+  },
 }
 return plugins
