@@ -117,7 +117,7 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
-      ensure_installed = { "lua", "python", "javascript", "html", "css" }, -- Add languages you need
+      ensure_installed = { "lua", "python", "javascript", "html", "css", "rust" }, -- Add languages you need
       highlight = { enable = true },
       indent = { enable = true },
       fold = { enable = true },  -- Enable Treesitter-based folding
