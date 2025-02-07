@@ -60,6 +60,7 @@ local plugins = {
         "debugpy",
         "mypy",
         "black",
+        "gopls",
       },
     },
   },
@@ -127,5 +128,23 @@ local plugins = {
       fold = { enable = true },  -- Enable Treesitter-based folding
     },
   },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    ft = "go",
+    opts = function()
+      return require "custom.configs.null-ls"
+    end,
+  },
+  {
+    "olexsmir/gopher.nvim",
+    ft = "go",
+    config = function(_, opts)
+      require("gopher").setup(opts)
+      require("core.utils").load_mappings("gopher")
+    end,
+    build = function()
+      vim.cmd [[silent! GoInstallDeps]]
+    end,
+  }
 }
 return plugins

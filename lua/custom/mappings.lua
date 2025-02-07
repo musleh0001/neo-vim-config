@@ -27,4 +27,26 @@ M.dap_python = {
   }
 }
 
+M.gopher = {
+  plugin = true,
+  n = {
+    ["<leader>gsj"] = {
+      ":!gomodifytags -file % -struct <C-R><C-W> -add-tags json -w<CR>",
+      "Add json struct tags"
+    },
+    ["<leader>gsy"] = {
+      ":!gomodifytags -file % -struct <C-R><C-W> -add-tags yaml -w<CR>",
+      "Add yaml struct tags"
+    },
+    ["<leader>rgsj"] = {
+      ":!gomodifytags -file % -struct <C-R><C-W> -remove-tags json -w<CR>",
+      "Add yaml struct tags"
+    },
+    ["<leader>rgsy"] = {
+      ":!gomodifytags -file % -struct <C-R><C-W> -remove-tags yaml -w<CR>",
+      "Add yaml struct tags"
+    }
+  }
+}
+
 return M
